@@ -18,7 +18,8 @@ if data_uploader is not None:
 st.header("The Matser Production Data ")
 st.sidebar.header("User input parameter")
 
-
+years=st.sidebar.multiselect("Select the year",options=df['YEAR'].unique(),default=df['YEAR'].unique())
+years=np.array(years)
 from datetime import datetime
 #start_time = st.sidebar.slider(
 #     "When do you want plot to start?",
@@ -45,6 +46,7 @@ def data_frame_for_plot(data_frame_list_d):
    return field_data_plot
 
 def field_perf_plot(field_data_plot):
+   field_data_plot.dropna(inplace=True)
    field_data_plot['Date']=pd.to_datetime(field_data_plot['Date'])
    field_data_plot['Date']=field_data_plot['Date'].dt.strftime("%b-%y")
    fig=plt.figure(figsize=(18,10.5),dpi=70)
@@ -99,6 +101,14 @@ def field_perf_plot(field_data_plot):
 
    return fig
 df_field_dta_plot=data_frame_for_plot(data_frame_list)
+st.dataframe(df_field_dta_plot)
 fig1=field_perf_plot(df_field_dta_plot)
-st.text('Pressure & Temperature Plot')
+st.text('Field Performance Since Inception')
 st.pyplot(fig1,width=20)
+filter=df_field_dta_plot['YEAR'].isin(years)
+df_filtered=df_field_dta_plot(filter)
+st.dataframe(df_filtered)
+fig2=field_perf_plot(df_filtered)
+st.text('Field Performannce on Selected year by User')
+st.pyplot(fig2,width=20)
+
