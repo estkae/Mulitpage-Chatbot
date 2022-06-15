@@ -20,10 +20,10 @@ st.sidebar.header("User input parameter")
 
 
 from datetime import datetime
-start_time = st.sidebar.slider(
-     "When do you want plot to start?",
-     value=datetime(2016, 1),
-     format="Mth-yy")
+#start_time = st.sidebar.slider(
+#     "When do you want plot to start?",
+#     value=datetime(2016, 1),
+#     format="Mth-yy")
 st.dataframe(data_df.head())
 df=data_df.copy()
 platform=df['Platform'].unique()
