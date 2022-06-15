@@ -18,7 +18,7 @@ if data_uploader is not None:
 st.header("The Matser Production Data ")
 st.sidebar.header("User input parameter")
 
-years=st.sidebar.multiselect("Select the year",options=df['YEAR'].unique(),default=data_df['YEAR'].unique())
+years=st.sidebar.multiselect("Select the year",options=data_df['YEAR'].unique(),default=data_df['YEAR'].unique())
 years=np.array(years)
 from datetime import datetime
 #start_time = st.sidebar.slider(
