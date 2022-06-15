@@ -56,53 +56,53 @@ def field_perf_plot(field_data_plot):
    field_data_plot.dropna(inplace=True)
    field_data_plot['Date']=pd.to_datetime(field_data_plot['Date'])
    field_data_plot['Date']=field_data_plot['Date'].dt.strftime("%b-%y")
-   fig=plt.figure(figsize=(34,24),dpi=70)
+   fig=plt.figure(figsize=(40,34),dpi=90)
    ax = fig.add_subplot(211)
 
-   ax.set_title('  Ratna & R-Series Field Performance plot ',fontsize=24)
-   ax.plot(field_data_plot['Date'],field_data_plot['Ql, blpd'],color='brown',lw=2.5,label='Liquid Rate')
-   ax.plot(field_data_plot['Date'],field_data_plot['Qo, bopd'],color='green',marker='o',lw=2.5,label='Oil Rate')
+   ax.set_title('  Ratna & R-Series Field Performance plot ',fontsize=32)
+   ax.plot(field_data_plot['Date'],field_data_plot['Ql, blpd'],color='brown',lw=3.5,label='Liquid Rate')
+   ax.plot(field_data_plot['Date'],field_data_plot['Qo, bopd'],color='green',marker='o',lw=3.5,label='Oil Rate')
    ax.legend(loc=1,fontsize='x-large')
    ax.set_ylim([0, (int(field_data_plot['Ql, blpd'].values.max())+10000)])
 
  
-   ax.set_xlabel("Date",fontsize=22,labelpad=10)
-   ax.tick_params( axis='y',labelsize=13,direction='out', length=6, width=2, colors='black',
+   ax.set_xlabel("Date",fontsize=26,labelpad=10)
+   ax.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
    ax.set_xticklabels(field_data_plot['Date'],fontsize=14,rotation=45)
    ax.set_ylabel("Ql & Qo in bpd",color="green",fontsize=22)
    ax2=ax.twinx()
-   ax2.plot(field_data_plot['Date'], field_data_plot['W/C'],color="blue",marker="o",lw=2.5,label='Water Cut')
+   ax2.plot(field_data_plot['Date'], field_data_plot['W/C'],color="blue",marker="o",lw=3.5,label='Water Cut')
    ax2.set_yticks(np.round(np.linspace(0, 100, 16), 0))
    ax2.set_ylim([0, 100])
    ax2.legend(loc='upper right', fontsize='x-large',bbox_to_anchor=(0.99, 0.85))
-   ax2.tick_params( axis='y',labelsize=13,direction='out', length=6, width=2, colors='black',
+   ax2.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
-   ax2.set_ylabel("Water Cut ",color="blue",fontsize=22)
-   ax.xaxis.grid(color='black', linestyle='--', linewidth=0.5)
-   ax.yaxis.grid(color='black', linestyle='--', linewidth=0.5)
+   ax2.set_ylabel("Water Cut ",color="blue",fontsize=26)
+   ax.xaxis.grid(color='black', linestyle='--', linewidth=1.5)
+   ax.yaxis.grid(color='black', linestyle='--', linewidth=1.5)
 
    ax3 = fig.add_subplot(212)
    #ax.set_title(platform[k]+'  Performance plot Allocation',fontsize=20)
-   ax3.plot(field_data_plot['Date'],field_data_plot['Qg (Assoc. Gas), m3/d'],color='brown',lw=2.5,label='Gas Rate in m3/d')
+   ax3.plot(field_data_plot['Date'],field_data_plot['Qg (Assoc. Gas), m3/d'],color='brown',lw=3.5,label='Gas Rate in m3/d')
 
    ax3.legend(loc=1,fontsize='x-large')
    ax3.set_ylim([0, (int(field_data_plot['Qg (Assoc. Gas), m3/d'].values.max())+20000)])
    #ax3.set_xlim(['Aug-18', 'Jun-22'])
-   ax3.set_xlabel("Date",fontsize=22,labelpad=10)
-   ax3.tick_params( axis='y',labelsize=13,direction='out', length=6, width=2, colors='black',
+   ax3.set_xlabel("Date",fontsize=26,labelpad=10)
+   ax3.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
-   ax3.set_xticklabels(field_data_plot['Date'],fontsize=14,rotation=45)
-   ax3.set_ylabel("Gas Rate in m3/d",color="brown",fontsize=22)
+   ax3.set_xticklabels(field_data_plot['Date'],fontsize=18,rotation=45)
+   ax3.set_ylabel("Gas Rate in m3/d",color="brown",fontsize=26)
    ax4=ax3.twinx()
    ax4.plot(field_data_plot['Date'], field_data_plot['GOR'],color="orange",marker="o",lw=2.5,label='GOR (v/v)')
    ax4.set_ylim([0, (int(field_data_plot['GOR'].values.max())+200)])
    ax4.legend(loc='upper right', fontsize='x-large',bbox_to_anchor=(0.99, 0.9))
-   ax4.tick_params( axis='y',labelsize=13,direction='out', length=6, width=2, colors='black',
+   ax4.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
    ax4.set_ylabel("GOR (v/v)",color="orange",fontsize=22)
-   ax3.xaxis.grid(color='black', linestyle='--', linewidth=0.5)
-   ax3.yaxis.grid(color='black', linestyle='--', linewidth=0.5)
+   ax3.xaxis.grid(color='black', linestyle='--', linewidth=1.5)
+   ax3.yaxis.grid(color='black', linestyle='--', linewidth=1.5)
    #plt.show()
    #plt.savefig("Performance plot Allocation. pdf", format="pdf", bbox_inches="tight")
 
