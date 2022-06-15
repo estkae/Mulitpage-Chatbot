@@ -108,8 +108,8 @@ fig1=field_perf_plot(df_field_dta_plot)
 st.text('Field Performance Since Inception')
 st.pyplot(fig1,width=20)
 
-filter=df['YEAR'].isin(years)
-df_filtered=df(filter)
+df_filtered=df[df['YEAR'].isin(years)]
+
 data_frame_list2=dataframe_list_conv(df_filtered)
 df_data_filtered=data_frame_for_plot(data_frame_list2)
 st.dataframe(df_filtered)
