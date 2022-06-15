@@ -50,7 +50,7 @@ def field_perf_plot(field_data_plot):
    field_data_plot.dropna(inplace=True)
    field_data_plot['Date']=pd.to_datetime(field_data_plot['Date'])
    field_data_plot['Date']=field_data_plot['Date'].dt.strftime("%b-%y")
-   fig=plt.figure(figsize=(18,10.5),dpi=70)
+   fig=plt.figure(figsize=(24,14),dpi=70)
    ax = fig.add_subplot(211)
 
    ax.set_title('  Ratna & R-Series Field Performance plot ',fontsize=24)
@@ -106,7 +106,7 @@ df_field_dta_plot=data_frame_for_plot(data_frame_list1)
 st.dataframe(df_field_dta_plot)
 fig1=field_perf_plot(df_field_dta_plot)
 st.text('Field Performance Since Inception')
-st.pyplot(fig1,width=20)
+st.pyplot(fig1,width=30)
 
 df_filtered=df[df['YEAR'].isin(years)]
 
@@ -115,5 +115,5 @@ df_data_filtered=data_frame_for_plot(data_frame_list2)
 st.dataframe(df_filtered)
 fig2=field_perf_plot(df_data_filtered)
 st.text('Field Performannce on Selected year by User')
-st.pyplot(fig2,width=20)
+st.pyplot(fig2,width=30)
 
