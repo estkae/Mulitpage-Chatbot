@@ -29,13 +29,14 @@ st.dataframe(data_df.head())
 df=data_df.copy()
 platform=df['Platform'].unique()
 year_list=df['YEAR'].unique()
-df_platform=df.groupby(['Platform','Date']).sum()
+def dataframe_list_conv(data):
+    df_platform=data.groupby(['Platform','Date']).sum()
 
-data_frame_list=[]
-for i in range(len(platform)):
-    temp_df=df_platform.loc[platform[i]]
-    data_frame_list.append(temp_df)
- 
+    data_frame_list=[]
+    for i in range(len(platform)):
+        temp_df=df_platform.loc[platform[i]]
+        data_frame_list.append(temp_df)
+    return data_frame_list
 def data_frame_for_plot(data_frame_list_d):
   
    field_data_plot=pd.concat( data_frame_list_d)
@@ -100,15 +101,19 @@ def field_perf_plot(field_data_plot):
    #plt.savefig("Performance plot Allocation. pdf", format="pdf", bbox_inches="tight")
 
    return fig
-df_field_dta_plot=data_frame_for_plot(data_frame_list)
+data_frame_list1=dataframe_list_conv(df)
+df_field_dta_plot=data_frame_for_plot(data_frame_list1)
 st.dataframe(df_field_dta_plot)
 fig1=field_perf_plot(df_field_dta_plot)
 st.text('Field Performance Since Inception')
 st.pyplot(fig1,width=20)
-filter=df_field_dta_plot['YEAR'].isin(years)
-df_filtered=df_field_dta_plot(filter)
+
+filter=df['YEAR'].isin(years)
+df_filtered=df(filter)
+data_frame_list2=dataframe_list_conv(df_filtered)
+df_data_filtered=data_frame_for_plot(data_frame_list2)
 st.dataframe(df_filtered)
-fig2=field_perf_plot(df_filtered)
+fig2=field_perf_plot(df_data_filtered)
 st.text('Field Performannce on Selected year by User')
 st.pyplot(fig2,width=20)
 
