@@ -35,7 +35,7 @@ for i in range(len(platform)):
     temp_df=df_platform.loc[platform[i]]
     data_frame_list.append(temp_df)
  
-def data_frame_for_plot(data_frame_list_d,date_lim):
+def data_frame_for_plot(data_frame_list_d):
   
    field_data_plot=pd.concat( data_frame_list_d)
    field_data_plot=field_data_plot.groupby('Date').sum()
