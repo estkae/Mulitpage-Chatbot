@@ -10,10 +10,16 @@ st.markdown(" The file format is  standard Excel File")
 
 data_uploader = st.file_uploader("upload file", type={"csv", "txt",'xlsx'})
 if data_uploader is not None:
-    data_df=pd.read_excel(data_uploader,sheet_name=10)
+    try:
+          data_df=pd.read_csv(data_uploader)
+          data_df=data_df[['Platform','Well No','Date','Days','YEAR','Ql, blpd', 'Qo, bopd', 'Qw, bopd','RecOil, bbls   ',
+                  'Qg (Assoc. Gas), m3/d','Moil, MMt', 'RecGas, m3']]  
+    except:      
+          data_df=pd.read_excel(data_uploader,sheet_name=10)
 
-    data_df=data_df[['Platform','Well No','Date','Days','YEAR','Ql, blpd', 'Qo, bopd', 'Qw, bopd','RecOil, bbls   ',
-       'Qg (Assoc. Gas), m3/d','Moil, MMt', 'RecGas, m3']]
+          data_df=data_df[['Platform','Well No','Date','Days','YEAR','Ql, blpd', 'Qo, bopd', 'Qw, bopd','RecOil, bbls   ',
+                  'Qg (Assoc. Gas), m3/d','Moil, MMt', 'RecGas, m3']]
+    
     
 st.header("The Matser Production Data ")
 st.sidebar.header("User input parameter")
