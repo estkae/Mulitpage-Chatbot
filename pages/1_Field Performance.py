@@ -73,7 +73,7 @@ def field_perf_plot(field_data_plot):
    ax.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
    ax.set_xticklabels(field_data_plot['Date'],fontsize=14,rotation=45)
-   ax3.tick_params(axis='both', which='both', length=0)
+   ax.tick_params(axis='both', which='both', length=0)
    ax.set_ylabel("Ql & Qo in bpd",color="green",fontsize=22)
    ax2=ax.twinx()
    ax2.plot(field_data_plot['Date'], field_data_plot['W/C'],color="blue",marker="o",lw=3.5,label='Water Cut')
