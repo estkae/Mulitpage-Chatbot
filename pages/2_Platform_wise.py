@@ -143,7 +143,7 @@ fig_col1, fig_col2 = st.columns(2)
 with fig_col1:
             st.markdown("### Pie Chart")
             fig_1 = px.pie(
-                data_frame=df
+                data_frame=df_data_filtered
             )
             st.write(fig_1)
             
