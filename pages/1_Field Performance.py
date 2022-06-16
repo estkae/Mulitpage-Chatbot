@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import plotly.express as px
 st.title("""Field Performance Dashoboard""")
 
 st.header("Upload the Matser Production  data file here ")
@@ -33,6 +34,8 @@ from datetime import datetime
 #     format="Mth-yy")
 st.dataframe(data_df.head())
 df=data_df.copy()
+
+
 platform=df['Platform'].unique()
 year_list=df['YEAR'].unique()
 def dataframe_list_conv(data):
@@ -122,4 +125,18 @@ st.dataframe(df_filtered)
 fig2=field_perf_plot(df_data_filtered)
 st.text('Field Performannce on Selected year by User')
 st.pyplot(fig2,width=25)
+
+# create two columns for charts
+fig_col1, fig_col2 = st.columns(2)
+with fig_col1:
+            st.markdown("### First Field")
+            fig_1 = px.density_heatmap(
+                data_frame=df_data_filtered, y="Qo, bopd", x="Ql, bopd"
+            )
+            st.write(fig_1)
+            
+with fig_col2:
+            st.markdown("### Second Chart")
+            fig_2 = px.histogram(data_frame=df_data_filtered, x="Qo, bopd")
+            st.write(fig_2)
 
