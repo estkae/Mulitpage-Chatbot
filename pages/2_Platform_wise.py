@@ -149,5 +149,5 @@ with fig_col1:
             
 with fig_col2:
             st.markdown("### Field Production Histogram")
-            fig_2 = px.density_mapbox(data_frame=df_data_filtered)
+            fig_2 = px.pie(data_frame=df_data_filtered,values=df_data_filtered['Qo, bopd'])
             st.write(fig_2)
