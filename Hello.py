@@ -3,17 +3,22 @@ st.set_page_config(
     page_title="Hello",
     page_icon="👋"
 )
-st.title(" Field Performance Dashboard")
-st.header(" Welcome to O & G Made Easy! 👋")
+st.title(" Web App Based Dashboard")
+st.header(" Welcome 👋")
 
 st.markdown(
     """
     We are here to make Oil and Gas Engineer life easy   
 """)
+
 activities=['Login','About']
 choice=st.sidebar.selectbox("Select Activity", activities)
 if choice=='Login':
     st.subheader('Login')
+    st.markdown(
+    """
+    Enter you name is Username   
+    """)
     username=st.text_input("Enter Username")
     password=st.text_input("Enter Password", type='password')
     if st.button("Submit"):
@@ -31,7 +36,7 @@ elif choice=='About':
              """)
 expander = st.expander("Domain Knowledge of Oil & Gas ")
 expander.write("""
-     In the fields Performance we monitor the Rates Oil,Gas,Water 0f the wells.
-     WE use the data for optimizing the fields production & hence increasing the profit for the producer.
-     WE need to observe the water cut & GOR(Gas Oil Ratio) at the platform level,well level & at the field level.
+     In the fields Performance we monitor the Rates of Liquid, Oil,Gas,Water production of the wells.
+     We use the data for optimizing the fields production & hence increasing the profit for the producer.
+     We need to observe the water cut & GOR(Gas Oil Ratio) data at the platform level,well level & at the field level.
  """)
