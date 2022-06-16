@@ -5,7 +5,12 @@ import seaborn as sns
 import streamlit as st
 import plotly.express as px
 
-st.title("""Platform wise Performance Dashboard Page """)
+st.set_page_config(
+    page_title="""Platform wise Performance Dashboard Page """,
+    page_icon="✅",
+    layout="wide",
+)
+
 
 st.header("Upload the  Production  data file here ")
 st.markdown(" The file format is  standard Excel File")
