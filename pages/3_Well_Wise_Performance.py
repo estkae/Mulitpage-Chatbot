@@ -24,10 +24,10 @@ if data_uploader is not None:
 st.header("The Master Production Data ")
 st.sidebar.header("User input parameter")
 
-platfor=st.sidebar.selectbox('Select the platform ',options=data_df['Platform'].unique(),default=data_df['Platform'].unique()[-1])
+platfor=st.sidebar.selectbox('Select the platform ',options=data_df['Platform'].unique())
 df=data_df.copy()
 df=df[df['Platform']==platfor]
-well_name=st.sidebar.selectbox('Select the Well  of the platform ',options=df['Well No'].unique(),default=df['Well No'].unique()[0])
+well_name=st.sidebar.selectbox('Select the Well  of the platform ',options=df['Well No'].unique())
 df_well=df.copy()
 
 df_well=df.copy()
