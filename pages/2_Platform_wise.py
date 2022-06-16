@@ -146,13 +146,13 @@ st.pyplot(fig2,width=25)
 
 fig_col1, fig_col2 = st.columns(2)
 with fig_col1:
-            st.markdown("### Pie Chart")
+            st.markdown("### Oil Production Pie Chart")
             fig_1 = px.pie(
                 data_frame=df_data_filtered,values=df_data_filtered['Qo, bopd']
             )
             st.write(fig_1)
             
 with fig_col2:
-            st.markdown("### Field Production Histogram")
+            st.markdown("### Gas Production Pie Chart")
             fig_2 = px.pie(data_frame=df_data_filtered,values=df_data_filtered['Qg (Assoc. Gas), m3/d'])
             st.write(fig_2)
