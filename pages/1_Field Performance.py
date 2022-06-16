@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 import plotly.express as px
-st.title("""Field Performance Dashoboard""")
+st.title("""Field Level  Performance Dashboard Page """)
 
-st.header("Upload the Matser Production  data file here ")
+st.header("Upload the  Production  data file here ")
 st.markdown(" The file format is  standard Excel File")
 
 data_uploader = st.file_uploader("upload file", type={"csv", "txt",'xlsx'})
@@ -22,7 +22,7 @@ if data_uploader is not None:
                   'Qg (Assoc. Gas), m3/d','Moil, MMt', 'RecGas, m3']]
     
     
-st.header("The Matser Production Data ")
+st.header("The  Production Data ")
 st.sidebar.header("User input parameter")
 
 years=st.sidebar.multiselect("Select the year",options=data_df['YEAR'].unique(),default=data_df['YEAR'].unique()[-5:-1])
@@ -61,8 +61,8 @@ def field_perf_plot(field_data_plot):
    field_data_plot['Date']=field_data_plot['Date'].dt.strftime("%b-%y")
    fig=plt.figure(figsize=(20,14),dpi=90)
    ax = fig.add_subplot(211)
-
-   ax.set_title('  Ratna & R-Series Field Performance plot ',fontsize=32)
+   ax.set_title('  Offshore  Field Performance plot ',fontsize=32)
+   #ax.set_title('  Ratna & R-Series Field Performance plot ',fontsize=32)
    ax.plot(field_data_plot['Date'],field_data_plot['Ql, blpd'],color='brown',lw=3.5,label='Liquid Rate')
    ax.plot(field_data_plot['Date'],field_data_plot['Qo, bopd'],color='green',marker='o',lw=3.5,label='Oil Rate')
    ax.legend(loc=1,fontsize='x-large')
