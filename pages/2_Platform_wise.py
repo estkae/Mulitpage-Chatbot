@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-st.title("""Platfrom wise Performance """)
+st.title("""Platform wise Performance Dashboard Page """)
 
-st.header("Upload the Matser Production  data file here ")
+st.header("Upload the  Production  data file here ")
 st.markdown(" The file format is  standard Excel File")
 
 data_uploader = st.file_uploader("upload file", type={"csv", "txt",'xlsx'})
@@ -22,7 +22,7 @@ if data_uploader is not None:
                   'Qg (Assoc. Gas), m3/d','Moil, MMt', 'RecGas, m3']]
     
     
-st.header("The Master Production Data ")
+st.header("The  Production Data ")
 st.sidebar.header("User input parameter")
 platforms=st.sidebar.multiselect("Select Multiple platforms",options=data_df['Platform'].unique(),default=data_df['Platform'].unique()[-3:-1])
 platforms=np.array(platforms)
@@ -113,7 +113,8 @@ def field_perf_plot(field_data_plot,platfor):
    ax3.yaxis.grid(color='black', linestyle='--', linewidth=1.5)
    #plt.show()
    #plt.savefig("Performance plot Allocation. pdf", format="pdf", bbox_inches="tight")
-
+   plt.setp(ax.get_xticklabels(), visible=False)
+   plt.setp(ax3.get_yticklabels(), visible=False)
    return fig
 
 #k=np.where(platfrom_arr==platform)# to know the index of platform
