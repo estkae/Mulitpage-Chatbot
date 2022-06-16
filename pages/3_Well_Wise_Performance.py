@@ -5,7 +5,7 @@ import seaborn as sns
 import streamlit as st
 
 st.title("""Well wise Performance """)
-st.header("Upload the Matser Production  data file here ")
+st.header("Upload the Master Production  data file here ")
 st.markdown(" The file format is  standard Excel File")
 
 data_uploader = st.file_uploader("upload file", type={"csv", "txt",'xlsx'})
