@@ -32,12 +32,12 @@ platform.append(platfor)
 platfrom_arr=data_df['Platform'].unique()
 platfrom_arr=np.array(platfrom_arr)
 df=data_df.copy()
-def dataframe_list_conv(data):
+def dataframe_list_conv(data,plat):
     df_platform=data.groupby(['Platform','Date']).sum()
 
     data_frame_list=[]
-    for i in range(len(platform)):
-        temp_df=df_platform.loc[platform[i]]
+    for i in range(len(plat)):
+        temp_df=df_platform.loc[plat[i]]
         data_frame_list.append(temp_df)
     return data_frame_list
  
@@ -108,7 +108,7 @@ def field_perf_plot(field_data_plot):
 
 #k=np.where(platfrom_arr==platform)# to know the index of platform
 df_filtered=df[df['Platform'].isin(platform)]
-data_frame_list1=dataframe_list_conv(df_filtered)
+data_frame_list1=dataframe_list_conv(df_filtered,platform)
 
 df_field_dta_plot=data_frame_for_plot(data_frame_list1)
 st.dataframe(df_field_dta_plot)
@@ -118,7 +118,7 @@ st.pyplot(fig1,width=25)
 
 df_filter=df[df['Platform'].isin(platforms)]
 
-data_frame_list2=dataframe_list_conv(df_filter)
+data_frame_list2=dataframe_list_conv(df_filter,platforms)
 df_data_filtered=data_frame_for_plot(data_frame_list2)
 st.dataframe(df_filtered)
 fig2=field_perf_plot(df_data_filtered)
