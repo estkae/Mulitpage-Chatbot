@@ -99,7 +99,7 @@ def field_perf_plot(field_data_plot,well_n):
 
 
 
-df_plat_dta_plot=data_frame_for_plot(data_frame_list1)
+df_plat_dta_plot=data_frame_for_plot(df)
 st.dataframe(df_plat_dta_plot)
 fig1=field_perf_plot(df_plat_dta_plot,platfor)
 st.text('Platform Production  Performance ')
