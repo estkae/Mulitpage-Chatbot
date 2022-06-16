@@ -149,5 +149,5 @@ with fig_col1:
             
 with fig_col2:
             st.markdown("### Field Production Histogram")
-            fig_2 = px.pie(data_frame=df_data_filtered,values=df_data_filtered['Qo, bopd'])
+            fig_2 = px.pie(data_frame=df_data_filtered,values=df_data_filtered['Qg (Assoc. Gas), m3/d'])
             st.write(fig_2)
