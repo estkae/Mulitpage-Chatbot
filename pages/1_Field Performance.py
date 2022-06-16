@@ -73,6 +73,7 @@ def field_perf_plot(field_data_plot):
    ax.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
    ax.set_xticklabels(field_data_plot['Date'],fontsize=14,rotation=45)
+   ax3.tick_params(axis='both', which='both', length=0)
    ax.set_ylabel("Ql & Qo in bpd",color="green",fontsize=22)
    ax2=ax.twinx()
    ax2.plot(field_data_plot['Date'], field_data_plot['W/C'],color="blue",marker="o",lw=3.5,label='Water Cut')
@@ -96,6 +97,7 @@ def field_perf_plot(field_data_plot):
    ax3.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
    ax3.set_xticklabels(field_data_plot['Date'],fontsize=18,rotation=45)
+   ax3.tick_params(axis='both', which='both', length=0)
    ax3.set_ylabel("Gas Rate in m3/d",color="brown",fontsize=26)
    ax4=ax3.twinx()
    ax4.plot(field_data_plot['Date'], field_data_plot['GOR'],color="orange",marker="o",lw=2.5,label='GOR (v/v)')
