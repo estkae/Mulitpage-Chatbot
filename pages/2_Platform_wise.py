@@ -50,7 +50,7 @@ def data_frame_for_plot(data_frame_list_d):
    field_data_plot['GOR']=field_data_plot['Qg (Assoc. Gas), m3/d']*6.28/field_data_plot['Qo, bopd']
    return field_data_plot 
 
-def field_perf_plot(field_data_plot):
+def field_perf_plot(field_data_plot,platfor):
    field_data_plot.dropna(inplace=True)
    field_data_plot['Date']=pd.to_datetime(field_data_plot['Date'])
    field_data_plot['Date']=field_data_plot['Date'].dt.strftime("%b-%y")
@@ -112,7 +112,7 @@ data_frame_list1=dataframe_list_conv(df_filtered,platform)
 
 df_field_dta_plot=data_frame_for_plot(data_frame_list1)
 st.dataframe(df_field_dta_plot)
-fig1=field_perf_plot(df_field_dta_plot)
+fig1=field_perf_plot(df_field_dta_plot,platform)
 st.text('Platform Production  Performance ')
 st.pyplot(fig1,width=25)
 
@@ -121,6 +121,6 @@ df_filter=df[df['Platform'].isin(platforms)]
 data_frame_list2=dataframe_list_conv(df_filter,platforms)
 df_data_filtered=data_frame_for_plot(data_frame_list2)
 st.dataframe(df_filtered)
-fig2=field_perf_plot(df_data_filtered)
+fig2=field_perf_plot(df_data_filtered,platforms)
 st.text('Field Performannce on Selected year by User')
 st.pyplot(fig2,width=25)
