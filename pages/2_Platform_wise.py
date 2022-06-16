@@ -27,8 +27,8 @@ st.sidebar.header("User input parameter")
 platforms=st.sidebar.multiselect("Select Multiple platforms",options=data_df['Platform'].unique(),default=data_df['Platform'].unique()[-3:-1])
 platforms=np.array(platforms)
 platfor=st.sidebar.selectbox('Select the platform ',options=data_df['Platform'].unique())
-platform=[platfor]
-platform.append()
+platform=[]
+platform.append(platfor)
 platfrom_arr=data_df['Platform'].unique()
 platfrom_arr=np.array(platfrom_arr)
 df=data_df.copy()
