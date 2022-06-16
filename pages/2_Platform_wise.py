@@ -136,3 +136,17 @@ plat_list=_sum(platforms)
 fig2=field_perf_plot(df_data_filtered,plat_list)
 st.text('Field Performannce on Selected year by User')
 st.pyplot(fig2,width=25)
+# create two columns for charts
+
+fig_col1, fig_col2 = st.columns(2)
+with fig_col1:
+            st.markdown("### Pie Chart")
+            fig_1 = px.pie(
+                data_frame=df
+            )
+            st.write(fig_1)
+            
+with fig_col2:
+            st.markdown("### Field Production Histogram")
+            fig_2 = px.density_mapbox(data_frame=df_data_filtered)
+            st.write(fig_2)
