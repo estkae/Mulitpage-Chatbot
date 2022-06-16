@@ -131,7 +131,7 @@ fig_col1, fig_col2 = st.columns(2)
 with fig_col1:
             st.markdown("### First Field")
             fig_1 = px.density_heatmap(
-                data_frame=df_filtered, y="Qo, bopd", x='Well No'
+                data_frame=df_filtered, y='Days', x='Well No'
             )
             st.write(fig_1)
             
