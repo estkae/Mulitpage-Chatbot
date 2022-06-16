@@ -26,6 +26,7 @@ st.header("The Master Production Data ")
 st.sidebar.header("User input parameter")
 platforms=st.sidebar.multiselect("Select Multiple platforms",options=data_df['Platform'].unique(),default=data_df['Platform'].unique()[-3:-1])
 platforms=np.array(platforms)
+
 platfor=st.sidebar.selectbox('Select the platform ',options=data_df['Platform'].unique())
 platform=[]
 platform.append(platfor)
@@ -40,7 +41,16 @@ def dataframe_list_conv(data,plat):
         temp_df=df_platform.loc[plat[i]]
         data_frame_list.append(temp_df)
     return data_frame_list
- 
+
+def _sum(arr):
+     
+    
+    sum='  '
+     
+    for i in arr:
+        sum = sum + i
+         
+    return(sum)
 def data_frame_for_plot(data_frame_list_d):
   
    field_data_plot=pd.concat( data_frame_list_d)
@@ -121,6 +131,7 @@ df_filter=df[df['Platform'].isin(platforms)]
 data_frame_list2=dataframe_list_conv(df_filter,platforms)
 df_data_filtered=data_frame_for_plot(data_frame_list2)
 st.dataframe(df_filtered)
-fig2=field_perf_plot(df_data_filtered,platforms)
+plat_list=_sum(platforms)
+fig2=field_perf_plot(df_data_filtered,plat_list)
 st.text('Field Performannce on Selected year by User')
 st.pyplot(fig2,width=25)
