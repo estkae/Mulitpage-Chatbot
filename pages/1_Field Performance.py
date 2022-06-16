@@ -73,7 +73,8 @@ def field_perf_plot(field_data_plot):
    ax.tick_params( axis='y',labelsize=16,direction='out', length=6, width=2, colors='black',
                grid_color='r', grid_alpha=0.5)
    ax.set_xticklabels(field_data_plot['Date'],fontsize=14,rotation=45)
-   ax.tick_params(axis='both', which='both', length=0)
+   
+    #ax.tick_params(axis='both', which='both', length=0)
    ax.set_ylabel("Ql & Qo in bpd",color="green",fontsize=22)
    ax2=ax.twinx()
    ax2.plot(field_data_plot['Date'], field_data_plot['W/C'],color="blue",marker="o",lw=3.5,label='Water Cut')
@@ -110,7 +111,10 @@ def field_perf_plot(field_data_plot):
    ax3.yaxis.grid(color='black', linestyle='--', linewidth=1.5)
    #plt.show()
    #plt.savefig("Performance plot Allocation. pdf", format="pdf", bbox_inches="tight")
-
+   plt.setp(ax.get_yticklabels(), visible=False)
+   plt.setp(ax3.get_yticklabels(), visible=False)
+   #plt.setp(ax3.get_yticklabels(), visible=False)
+   #plt.setp(ax2.get_yticklabels(), visible=False)
    return fig
 data_frame_list1=dataframe_list_conv(df)
 df_field_dta_plot=data_frame_for_plot(data_frame_list1)
@@ -131,14 +135,14 @@ st.pyplot(fig2,width=25)
 # create two columns for charts
 fig_col1, fig_col2 = st.columns(2)
 with fig_col1:
-            st.markdown("### First Field")
+            st.markdown("### Density Heatmap for flowing days")
             fig_1 = px.density_heatmap(
                 data_frame=df_filtered, y='Days', x='Well No'
             )
             st.write(fig_1)
             
 with fig_col2:
-            st.markdown("### Second Chart")
+            st.markdown("### Field Production Histogram")
             fig_2 = px.histogram(data_frame=df_data_filtered, x="Qo, bopd")
             st.write(fig_2)
 
