@@ -3,7 +3,7 @@ st.set_page_config(
     page_title="Hello",
     page_icon="👋"
 )
-st.title(" Web App Based Dashboard")
+st.title(" Oil Assistant")
 st.header(" Welcome 👋")
 
 st.markdown(
@@ -31,8 +31,7 @@ if choice=='Login':
 elif choice=='About':   
     st.write(
         """With the Release Streamlit Version 1.10.0 it is now possible to make a Multi-Page application 
-     eliminating need of third party plugins. In this Web application we are working to make a dashboard of field performance 
-   .We are Energy professionals &  our aim is to reduce the complexitiy of O & G Industy. 
+     eliminating need of third party plugins. In this Web application we are working to make assistant and our aim is to reduce the complexitiy of O & G Industy. 
              """)
 expander = st.expander("Domain Knowledge of Oil & Gas ")
 expander.write("""
