@@ -24,7 +24,7 @@ from langchain.prompts.prompt import PromptTemplate
 st.title("""Arxiv Papers """)
 
    
-st.header("The Arxiv Papers")
+
 
 
 import streamlit as st
@@ -85,9 +85,6 @@ def load_data(file_name):
 
 df=load_data('arxiv')
 
-st.header("Globalize Text")
-
-
 
 st.markdown("## Enter your Idea to learn")
 
@@ -125,23 +122,23 @@ if query:
     list_queries=docsearch.similarity_search(query)
     x_page_content=copy_list(list_queries)
     result = df[df['text_full'].isin(x_page_content)][['title', 'year','authors','abstract']]
-    
-    col1, col2,col3, col4 = st.columns(4)
+    st.dataframe(result)
+    #col1, col2,col3, col4 = st.columns(4)
 
-    with col1:
-         st.write(result.iloc[0])
-         st.markdown("Often professionals would like to improve their emails, but don't have the skills to do so. \n\n This tool \
+    #with col1:
+         #st.write(result.iloc[0])
+         #st.markdown("Often professionals would like to improve their emails, but don't have the skills to do so. \n\n This tool \
                 will help you improve your email skills by converting your emails into a more professional format. This tool \
                 is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
                 [@GregKamradt](https://twitter.com/GregKamradt). \n\n View Source Code on [Github](https://github.com/gkamradt/globalize-text-streamlit/blob/main/main.py)")
 
-    with col2:
-         st.write(result.iloc[1])
+    #with col2:
+    #     st.write(result.iloc[1])
     
-    with col3:
-         st.write(result.iloc[2])
-    with col4:
-         st.write(result.iloc[3])
+    #with col3:
+     #    st.write(result.iloc[2])
+    #with col4:
+     #    st.write(result.iloc[3])
     #prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=email_input)
 
     #formatted_email = llm(prompt_with_email)
