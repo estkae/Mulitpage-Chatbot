@@ -97,7 +97,7 @@ with col1:
     
 with col2:
     option_expert = st.selectbox(
-        'Which type of Summarization would you like?',
+        'Level of Expertise?',
         ('Basic for  6', 'Medium for 18', 'Expert for 30'))
 
 with col3:
