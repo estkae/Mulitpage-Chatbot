@@ -88,7 +88,7 @@ df=load_data('arxiv')
 #st.markdown("## Enter your Idea to learn")
 
 
-st.sidebar.header('Version:3.0.0')
+#st.sidebar.header('Version:3.0.0')
 st.sidebar.header('Arxiv Papers')
 
 st.sidebar.write("Arxiv Papers is an open-source data created by the University of Cornell 🎓 that provides access to a wide range of research papers 📝. Our platform specializes in artificial intelligence ,  natural language processing , prompt engineering, and energy-related papers ⚡. We hope you find our platform useful and informative for learning 📚🤓")
