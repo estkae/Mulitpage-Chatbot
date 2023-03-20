@@ -39,6 +39,11 @@ template = """
     YOUR Summary :
 """
 
+prompt = PromptTemplate(
+    input_variables=["tone", "expertise", "abstract"],
+    template=template,
+)
+
 template_1 = """
     You are given two abstract A and abstract B. If Abstract A and Absctract B are same reply that abstracts are same.
     If the abstract A and abstract B are different then compare and highlight differneces in terms of content and style which 
@@ -49,11 +54,6 @@ template_1 = """
     ABSTRACT B: {abstract_b}
     YOUR Observations :
 """
-prompt = PromptTemplate(
-    input_variables=["tone", "expertise", "abstract"],
-    template=template,
-)
-
 prompt_1 = PromptTemplate(
     input_variables=["abstract_a", "abstract_b"]
     template=template_1,
