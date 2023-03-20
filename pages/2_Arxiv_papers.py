@@ -21,14 +21,11 @@ import pickle
 from langchain import OpenAI, VectorDBQA
 from langchain.prompts.prompt import PromptTemplate
 
-st.title("""Field Level  Performance Dashboard Page """)
-
-st.header("Upload the  Production  data file here ")
-st.markdown(" The file format is  standard Excel File")
+st.title("""Arxiv Papers """)
 
    
-st.header("The  Production Data ")
-st.sidebar.header("User input parameter")
+st.header("The Arxiv Papers")
+
 
 import streamlit as st
 from langchain import PromptTemplate
@@ -76,6 +73,7 @@ def load_vectorstore():
        
     return FAISS.load_local('arxiv_embeddings', embeddings)
 
+docsearch = load_vectorstore()
 def load_data(file_name):
     """
     Load a CSV file as a Pandas DataFrame from the data folder in a GitHub repository.
@@ -107,19 +105,19 @@ with col2:
         ('American', 'British'))
 
 def get_text():
-    input_text = st.text_area(label="Email Input", label_visibility='collapsed', placeholder="Your Email...", key="email_input")
+    input_text = st.text_area(label="Topic", label_visibility='collapsed', placeholder="Your Interest...", key="query")
     return input_text
 
 query= get_text()
 
 if len(query.split(" ")) > 700:
-    st.write("Please enter a shorter email. The maximum length is 700 words.")
+    st.write("Please enter a shorter query. The maximum length is 700 words.")
     st.stop()
 
 
-st.button("*See An Example*", type='secondary', help="Click to see an example of the email you will be converting.", on_click=update_text_with_example)
+#st.button("*See An Example*", type='secondary', help="Click to see an example of the email you will be converting.", on_click=update_text_with_example)
 
-st.markdown("### Your Converted Email:")
+#st.markdown("### Your Converted Email:")
 
 if email_input:
     
