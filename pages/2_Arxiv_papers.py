@@ -21,7 +21,7 @@ import pickle
 from langchain import OpenAI, VectorDBQA
 from langchain.prompts.prompt import PromptTemplate
 
-st.title("""Arxiv Papers """)
+st.title("""Arxiv Papers 📝 """)
 
    
 
@@ -71,7 +71,7 @@ def load_data(file_name):
 df=load_data('arxiv')
 
 
-st.markdown("## Enter your Idea to learn")
+#st.markdown("## Enter your Idea to learn")
 
 
 
@@ -130,6 +130,6 @@ if query:
     prompt_with_email = prompt.format(tone=option_tone, expertise=option_expert, abstract=abstract_input)
 
     formatted_email = llm(prompt_with_email)
-    st.markdown("### Your Converted Abstract:")
+    st.markdown("### Your Converted Abstract📃:")
     st.write(formatted_email)
     
