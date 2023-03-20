@@ -33,7 +33,7 @@ from langchain.llms import Cohere
 
 template = """
     Below is  the abstract of a research papers. You need to summarize the abstract and 
-    write the summary in {tone} style . Write  the summary  as {expertise} years old considering the following abstract 
+    write the summary in {tone} format . Write  the summary  as {expertise} years old considering the following abstract 
     ABSTRACT: {abstract}
     Tone:{tone}
     YOUR Summary :
