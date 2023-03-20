@@ -52,7 +52,7 @@ template_1 = """
     ABSTRACT A: {abstract_a}
     
     ABSTRACT B: {abstract_b}
-    YOUR Observations :
+    YOUR Observations :\n
 """
 prompt_1 = PromptTemplate(
     input_variables=["abstract_a", "abstract_b"],
