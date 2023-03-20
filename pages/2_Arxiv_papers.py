@@ -33,7 +33,7 @@ from langchain.llms import Cohere
 
 template = """
     Below is  the abstract of a research papers. You need to summarize the abstract and 
-    write the summary in {tone} style . Write  the summary for  {expertise} years old considering the following abstract 
+    write the summary in {tone} style . Write  the summary  as {expertise} years old considering the following abstract 
     ABSTRACT: {abstract}
     
     YOUR {dialect} RESPONSE:
@@ -75,7 +75,7 @@ st.markdown("## Enter your Idea to learn")
 
 
 
-col1, col2 = st.columns(2)
+col1, col2,col3 = st.columns(3)
 with col1:
     option_tone = st.selectbox(
         'Which format you want to have your summarization?',
@@ -86,6 +86,10 @@ with col2:
         'Which type of Summarization would you like?',
         ('Basic for  6', 'Medium for 18', 'Expert for 30'))
 
+with col3:
+    option_abstract = st.selectbox(
+        'Which paper would you like to summarize?',
+        ('1' '2', '3','4'))
 def get_text():
     input_text = st.text_area(label="Topic", label_visibility='collapsed', placeholder="Your Interest...", key="query")
     return input_text
@@ -109,7 +113,8 @@ if query:
     result = df[df['text_full'].isin(x_page_content)][['title', 'year','authors','abstract']]
     st.dataframe(result,200,200)
     #col1, col2,col3, col4 = st.columns(4)
-
+    abstract_input=x_page_content[int(option_abstract)-1]
+    
     #with col1:
          #st.write(result.iloc[0])
         
@@ -121,7 +126,7 @@ if query:
     #with col4:
      #    st.write(result.iloc[3])
     
-    prompt_with_email = prompt.format(tone=option_tone, expertise=option_expert, abstract=email_input)
+    prompt_with_email = prompt.format(tone=option_tone, expertise=option_expert, abstract=abstract_input)
 
     formatted_email = llm(prompt_with_email)
     st.write(formatted_email)
