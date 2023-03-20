@@ -89,7 +89,7 @@ with col2:
 with col3:
     option_abstract = st.selectbox(
         'Which paper would you like to summarize?',
-        ('1' '2', '3','4'))
+        ('1','2','3','4'))
 def get_text():
     input_text = st.text_area(label="Topic", label_visibility='collapsed', placeholder="Your Interest...", key="query")
     return input_text
