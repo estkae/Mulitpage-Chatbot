@@ -79,7 +79,7 @@ col1, col2,col3 = st.columns(3)
 with col1:
     option_tone = st.selectbox(
         'Which format you want to have your summarization?',
-        ('Point wise', 'Paragraph','Linkedin post'))
+        ('Bullet point', 'Paragraph','Linkedin post'))
     
 with col2:
     option_expert = st.selectbox(
