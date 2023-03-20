@@ -124,7 +124,7 @@ if len(query.split(" ")) > 700:
 #st.markdown("### Your Converted Email:")
 llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
                                          temperature=0.7)
-llm_1=Cohere(model="summarize-xlarge", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",temperature=0.7)
+llm_1=Cohere(model="summarize-xlarge", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",temperature=0.9)
 if query:
     
     #llm = load_LLM(openai_api_key=openai_api_key)
