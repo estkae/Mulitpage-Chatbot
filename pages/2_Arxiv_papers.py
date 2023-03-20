@@ -112,7 +112,7 @@ if query:
     list_queries=docsearch.similarity_search(query)
     x_page_content=copy_list(list_queries)
     result = df[df['text_full'].isin(x_page_content)][['title', 'year','authors','abstract']]
-    st.dataframe(result,600,200)
+    st.dataframe(result,900,200)
     #col1, col2,col3, col4 = st.columns(4)
     abstract_input=x_page_content[int(option_abstract)-1]
     
