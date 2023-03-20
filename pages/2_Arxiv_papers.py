@@ -91,7 +91,7 @@ df=load_data('arxiv')
 st.sidebar.header('Version:3.0.0')
 st.sidebar.header('Arxiv Papers')
 
-st.sidebar.write("Arxiv Papers is an open-source data created by the University of Cornell 🎓 that provides access to a wide range of research papers 📝. Our platform specializes in artificial intelligence 💻,  natural language processing 🗣️, prompt engineering 📝, and energy-related papers ⚡. We hope you find our platform useful and informative for learning 📚🤓")
+st.sidebar.write("Arxiv Papers is an open-source data created by the University of Cornell 🎓 that provides access to a wide range of research papers 📝. Our platform specializes in artificial intelligence ,  natural language processing , prompt engineering, and energy-related papers ⚡. We hope you find our platform useful and informative for learning 📚🤓")
 st.sidebar.header('How to Use')
 st.sidebar.write("Our app is designed to help you summarize and compare research papers 📝. To get started, simply enter a query related to the topic you’re interested in. Our app will then select the most relevant papers related to your query. You can then compare and contrast the papers to get a better understanding of the topic. Our app is designed to be user-friendly and easy to use. We hope you find it helpful and informative! 📚🤓")
 col1, col2,col3,col4 = st.columns(4)
