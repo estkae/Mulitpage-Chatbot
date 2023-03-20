@@ -124,6 +124,7 @@ if len(query.split(" ")) > 700:
 #st.markdown("### Your Converted Email:")
 llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
                                          temperature=0.7)
+llm_1=Cohere(model="summarize-xlarge", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",temperature=0.7,max_tokens= 400)
 if query:
     
     #llm = load_LLM(openai_api_key=openai_api_key)
@@ -158,6 +159,6 @@ if query:
        abstract_b_t=x_page_content[int(option_compare)-1]
        prompt_with_comp = prompt_1.format(abstract_a=abstract_a_t, abstract_b=abstract_b_t)
 
-       formatted_comp = llm(prompt_with_comp)
+       formatted_comp = llm_1(prompt_with_comp)
        st.markdown("### Comaparison between Abstracts📃:")
        st.write(formatted_comp)
