@@ -119,7 +119,7 @@ if len(query.split(" ")) > 700:
 
 #st.markdown("### Your Converted Email:")
 
-if email_input:
+if query:
     
     #llm = load_LLM(openai_api_key=openai_api_key)
     list_queries=docsearch.similarity_search(query)
