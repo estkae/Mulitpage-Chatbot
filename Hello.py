@@ -1,10 +1,10 @@
 import streamlit as st
 st.set_page_config(
-    page_title="Hello",
+    page_title="Oil Buddy",
     page_icon="🤖"
 )
 st.title(" Oil Buddy 🤖: Your Assistant")
-st.header(" Welcome 👋")
+st.write(" Version 3.0.0")
 
 st.markdown(
     """
@@ -31,8 +31,7 @@ if choice=='Login':
 elif choice=='About':   
     st.markdown("Often professionals would like to know about Oil and Gas. \n\n This tool \
                 will help you improve your technical skills by advising for Oil and Gas. This tool \
-                is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
-                [@GregKamradt](https://twitter.com/GregKamradt).")
+                is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com).")
 
 expander = st.expander("Domain Knowledge and Vision ")
 expander.write("""
