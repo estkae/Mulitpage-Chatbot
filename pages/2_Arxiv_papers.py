@@ -97,7 +97,7 @@ with col1:
     
 with col2:
     option_expert = st.selectbox(
-        'Level of Expertise?',
+        'What is the level of Expertise you like?',
         ('Basic for  6', 'Medium for 18', 'Expert for 30'))
 
 with col3:
