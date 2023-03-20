@@ -156,7 +156,7 @@ if query:
     else:
        abstract_a_t=x_page_content[int(option_abstract)-1]
        abstract_b_t=x_page_content[int(option_compare)-1]
-       prompt_with_comp = prompt.format(abstract_a=abstract_a_t, abstract_b=abstract_b_t)
+       prompt_with_comp = prompt_1.format(abstract_a=abstract_a_t, abstract_b=abstract_b_t)
 
        formatted_comp = llm(prompt_with_comp)
        st.markdown("### Comaparison between Abstracts📃:")
