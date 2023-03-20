@@ -35,8 +35,8 @@ template = """
     Below is  the abstract of a research papers. You need to summarize the abstract and 
     write the summary in {tone} style . Write  the summary  as {expertise} years old considering the following abstract 
     ABSTRACT: {abstract}
-    
-    YOUR {dialect} RESPONSE:
+    Tone:{tone}
+    YOUR Summary :
 """
 
 prompt = PromptTemplate(
