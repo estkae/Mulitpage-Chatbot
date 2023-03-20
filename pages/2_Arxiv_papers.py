@@ -91,7 +91,7 @@ with col3:
         'Which paper would you like to summarize?',
         ('1','2','3','4'))
 def get_text():
-    input_text = st.text_area(label="Topic", label_visibility='collapsed',height=10, placeholder="Your Interest...", key="query")
+    input_text = st.text_area(label="Topic", label_visibility='collapsed',height=5, placeholder="Your Interest...", key="query")
     return input_text
 
 query= get_text()
