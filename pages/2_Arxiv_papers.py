@@ -38,6 +38,7 @@ template = """
     Tone:{tone}
     YOUR Summary :
 """
+
 template_1 = """
     You are given two abstract A and abstract B. If Abstract A and Absctract B are same reply that abstracts are same.
     If the abstract A and abstract B are different then compare and highlight differneces in terms of content and style which 
