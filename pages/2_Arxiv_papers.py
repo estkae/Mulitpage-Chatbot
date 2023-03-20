@@ -46,13 +46,13 @@ prompt = PromptTemplate(
 
 template_1 = """
     You are given two abstract A and abstract B. If Abstract A and Absctract B are same reply that abstracts are same.
-    If the abstract A and abstract B are different then compare and highlight differences in terms of content and style which 
+    If the abstract A and abstract B are different then compare and highlight differences step by step in terms of content and style which 
     are given below: 
     
     ABSTRACT A: {abstract_a}
     
     ABSTRACT B: {abstract_b}
-    YOUR Comparisons :\n
+    YOUR Comparisons Step by step:\n
 """
 prompt_1 = PromptTemplate(
     input_variables=["abstract_a", "abstract_b"],
