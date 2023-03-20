@@ -38,12 +38,25 @@ template = """
     Tone:{tone}
     YOUR Summary :
 """
-
+template_1 = """
+    You are given two abstract A and abstract B. If Abstract A and Absctract B are same reply that abstracts are same.
+    If the abstract A and abstract B are different then compare and highlight differneces in terms of content and style which 
+    are given below: 
+    
+    ABSTRACT A: {abstract_a}
+    
+    ABSTRACT B: {abstract_b}
+    YOUR Observations :
+"""
 prompt = PromptTemplate(
     input_variables=["tone", "expertise", "abstract"],
     template=template,
 )
 
+prompt_1 = PromptTemplate(
+    input_variables=["abstract_a", "abstract_b"]
+    template=template_1,
+)
 #qa=VectorDBQA.from_chain_type(llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
 #                                         temperature=0.7),k=1,vectorstore=docsearch, return_source_documents=False)
 def copy_list(a):
@@ -75,7 +88,7 @@ df=load_data('arxiv')
 
 
 
-col1, col2,col3 = st.columns(3)
+col1, col2,col3,col4 = st.columns(4)
 with col1:
     option_tone = st.selectbox(
         'Which format you want to have your summarization?',
@@ -90,6 +103,10 @@ with col3:
     option_abstract = st.selectbox(
         'Which paper would you like to summarize?',
         ('1','2','3','4'))
+with col4:
+    option_compare = st.selectbox(
+        'Which paper would you want to compare with?',
+        ('None','1','2','3','4'))
 def get_text():
     input_text = st.text_input(label="Topic", label_visibility='collapsed', placeholder="Your Interest...", key="query")
     return input_text
@@ -132,4 +149,14 @@ if query:
     formatted_email = llm(prompt_with_email)
     st.markdown("### Your Summarized Abstract📃:")
     st.write(formatted_email)
+    if option_compare=='None':
+       st.markdown("### Comaparison between Abstracts📃:")
     
+    else:
+       abstract_a_t=x_page_content[int(option_abstract)-1]
+       abstract_b_t=x_page_content[int(option_compare)-1]
+       prompt_with_comp = prompt.format(abstract_a=abstract_a_t, abstract_b=abstract_b_t)
+
+       formatted_comp = llm(prompt_with_comp)
+       st.markdown("### Comaparison between Abstracts📃:")
+       st.write(formatted_comp)
