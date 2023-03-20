@@ -20,7 +20,7 @@ from langchain.chains import ChatVectorDBChain
 import pickle
 from langchain import OpenAI, VectorDBQA
 from langchain.prompts.prompt import PromptTemplate
-import plotly.express as px
+
 st.title("""Field Level  Performance Dashboard Page """)
 
 st.header("Upload the  Production  data file here ")
