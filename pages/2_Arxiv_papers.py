@@ -44,8 +44,8 @@ prompt = PromptTemplate(
     template=template,
 )
 
-qa=VectorDBQA.from_chain_type(llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
-                                         temperature=0.7),k=1,vectorstore=docsearch, return_source_documents=False)
+#qa=VectorDBQA.from_chain_type(llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
+#                                         temperature=0.7),k=1,vectorstore=docsearch, return_source_documents=False)
 def copy_list(a):
     b = []
     for i in range(0,4):
