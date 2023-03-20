@@ -104,7 +104,8 @@ if len(query.split(" ")) > 700:
 #st.button("*See An Example*", type='secondary', help="Click to see an example of the email you will be converting.", on_click=update_text_with_example)
 
 #st.markdown("### Your Converted Email:")
-
+llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
+#                                         temperature=0.7)
 if query:
     
     #llm = load_LLM(openai_api_key=openai_api_key)
