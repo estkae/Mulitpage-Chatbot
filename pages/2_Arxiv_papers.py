@@ -55,7 +55,7 @@ template_1 = """
     YOUR Observations :
 """
 prompt_1 = PromptTemplate(
-    input_variables=["abstract_a", "abstract_b"]
+    input_variables=["abstract_a", "abstract_b"],
     template=template_1,
 )
 #qa=VectorDBQA.from_chain_type(llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
