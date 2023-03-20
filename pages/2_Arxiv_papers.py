@@ -84,7 +84,7 @@ def load_data(file_name):
     return df
 
 df=load_data('arxiv')
-st.set_page_config(page_title="Globalize Email", page_icon=":robot:")
+
 st.header("Globalize Text")
 
 
