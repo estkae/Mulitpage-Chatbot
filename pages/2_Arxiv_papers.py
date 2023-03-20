@@ -130,5 +130,6 @@ if query:
     prompt_with_email = prompt.format(tone=option_tone, expertise=option_expert, abstract=abstract_input)
 
     formatted_email = llm(prompt_with_email)
+    st.markdown("### Your Converted Abstract:")
     st.write(formatted_email)
     
