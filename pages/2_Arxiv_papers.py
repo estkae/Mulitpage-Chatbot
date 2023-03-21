@@ -152,7 +152,7 @@ if query:
 
     formatted_email = llm(prompt_with_email)
     st.markdown("### Your Summarized Abstract📃:")
-    st.code(formatted_email)
+    st.code(formatted_email,language='None')
     #st.write(formatted_email)
     col1, col2 = st.beta_columns ([1,3]) 
     with col1:
