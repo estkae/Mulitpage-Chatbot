@@ -37,7 +37,6 @@ elif choice=='About':
 expander = st.expander("Domain Knowledge and Vision ")
 expander.write("""
      Domain knowledge is important in the oil and gas industry because it helps employees understand the complexities of the industry
-     and the processes involved in producing and distributing oil and gas
-    Our vision is to revolutionize the energy industry by creating an app that leverages the power of AI\n
-                and large language models to provide innovative solutions.
+     and the processes involved in producing and distributing oil and gas. Our vision is to revolutionize the energy industry by creating an app
+     that leverages the power of AI and large language models(LLms) to provide innovative solutions.
  """)
