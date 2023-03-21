@@ -153,7 +153,7 @@ if query:
     formatted_email = llm(prompt_with_email)
     st.markdown("### Your Summarized Abstract📃:")
     st.write(formatted_email)
-    col1, col2 = st.columns(2)
+    col1, col2 = st.beta_columns ([1,3]) 
     with col1:
       option_compare = st.selectbox(
         'Which paper would you want to compare with?',
