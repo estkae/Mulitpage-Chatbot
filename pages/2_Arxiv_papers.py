@@ -108,7 +108,7 @@ with col2:
 with col3:
     option_abstract = st.selectbox(
         'Which Paper A would you like to summarize?',
-        ('1','2','3','4'))
+        ('1','2','3','4','5','6'))
 
 def get_text():
     input_text = st.text_input(label="Topic", label_visibility='collapsed', placeholder="Your Interest...", key="query")
@@ -130,7 +130,7 @@ llm_1=Cohere(model="summarize-xlarge", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7X
 if query:
     
     #llm = load_LLM(openai_api_key=openai_api_key)
-    list_queries=docsearch.similarity_search(query)
+    list_queries=docsearch.similarity_search(query,k=6)
     x_page_content=copy_list(list_queries)
     result = df[df['text_full'].isin(x_page_content)][['title', 'year','authors','abstract']]
     st.dataframe(result,900,200)
@@ -152,13 +152,13 @@ if query:
 
     formatted_email = llm(prompt_with_email)
     st.markdown("### Your Summarized Abstract📃:")
-    st.code(formatted_email,language='None')
-    #st.write(formatted_email)
+    #st.code(formatted_email,language='None')
+    st.write(formatted_email)
     col1, col2 = st.beta_columns ([1,3]) 
     with col1:
       option_compare = st.selectbox(
         'Which paper B would you want to compare with?',
-        ('None','1','2','3','4'))
+        ('None','1','2','3','4','5','6'))
     
     with col2:
       
