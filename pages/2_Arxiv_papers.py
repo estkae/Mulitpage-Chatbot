@@ -107,7 +107,7 @@ with col2:
 
 with col3:
     option_abstract = st.selectbox(
-        'Which paper would you like to summarize?',
+        'Which Paper A would you like to summarize?',
         ('1','2','3','4'))
 
 def get_text():
@@ -156,7 +156,7 @@ if query:
     col1, col2 = st.beta_columns ([1,3]) 
     with col1:
       option_compare = st.selectbox(
-        'Which paper would you want to compare with?',
+        'Which paper B would you want to compare with?',
         ('None','1','2','3','4'))
     
     with col2:
