@@ -94,7 +94,7 @@ st.sidebar.header('Arxiv Papers')
 st.sidebar.write("Arxiv Papers is an open-source data created by the University of Cornell 🎓 that provides access to a wide range of research papers 📝. Our platform specializes in artificial intelligence ,  natural language processing , prompt engineering, and energy-related papers ⚡.")
 st.sidebar.header('How to Use')
 st.sidebar.write("Our app is designed to help you summarize and compare research papers 📝. To get started, simply enter a query related to the topic you’re interested in. Our app will then select the most relevant papers related to your query. You can then compare and contrast the papers to get a better understanding of the topic. Our app is designed to be user-friendly and easy to use. We hope you find it helpful and informative! 📚🤓")
-col1, col2,col3,col4 = st.columns(4)
+col1, col2,col3 = st.columns(3)
 with col1:
     option_tone = st.selectbox(
         'Which format you want to have your summarization?',
@@ -109,10 +109,7 @@ with col3:
     option_abstract = st.selectbox(
         'Which paper would you like to summarize?',
         ('1','2','3','4'))
-with col4:
-    option_compare = st.selectbox(
-        'Which paper would you want to compare with?',
-        ('None','1','2','3','4'))
+
 def get_text():
     input_text = st.text_input(label="Topic", label_visibility='collapsed', placeholder="Your Interest...", key="query")
     return input_text
@@ -156,10 +153,19 @@ if query:
     formatted_email = llm(prompt_with_email)
     st.markdown("### Your Summarized Abstract📃:")
     st.write(formatted_email)
-    if option_compare=='None':
+    col1, col2 = st.columns(2)
+    with col1:
+      option_compare = st.selectbox(
+        'Which paper would you want to compare with?',
+        ('None','1','2','3','4'))
+    
+    with col2:
+      
+   
+      if option_compare=='None':
        st.markdown("### Comaparison between Abstracts📃:")
     
-    else:
+      else:
        abstract_a_t=x_page_content[int(option_abstract)-1]
        abstract_b_t=x_page_content[int(option_compare)-1]
        prompt_with_comp = prompt_1.format(abstract_a=abstract_a_t, abstract_b=abstract_b_t)
