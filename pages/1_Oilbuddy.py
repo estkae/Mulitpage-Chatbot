@@ -19,7 +19,7 @@ from langchain import OpenAI, VectorDBQA
 from langchain.prompts.prompt import PromptTemplate
 
 st.set_page_config(
-     page_title='Reservoir Buddy 🤖',
+     page_title='Oil Buddy 🤖',
      
      initial_sidebar_state="expanded"
      #layout="wide",
@@ -91,10 +91,10 @@ qa=ChatVectorDBChain.from_llm(llm=Cohere(model="summarize-xlarge", cohere_api_ke
 # From here down is all the StreamLit UI.
 
 #st.set_page_config(page_title="Chatbot", page_icon=":shark:")
-st.header("Reservoir Buddy🤖 Your Assistant ",)
+st.header("Oil Buddy🤖 Your Assistant ",)
 st.sidebar.header('Sources and Citations')
 
-st.sidebar.write("Reservoir Buddy  has been using open source  Reservoir Engineering Materials for educational purposes only.\nIts primary sources are\nReservoir Engineering material prepared for GATE by courtsey of Mr. Akshay Shekhawat, as well as reputable websites such as Wikipedia, PetroWiki and  You Tube Videos related to Reservoir Engineering\n")
+st.sidebar.write("Oil Buddy  has been using open source  Oil and Gasr Engineering Materials for educational purposes only.\nIts primary sources are\nReservoir and Production Engineering material prepared for GATE by courtsey of Mr. Akshay Shekhawat, as well as reputable websites such as Wikipedia, PetroWiki and  You Tube Videos related to Reservoir and Production Engineering\n")
 st.sidebar.header('References')
 st.sidebar.write("Check Out References for more detailed info ℹ️ :\n  [Wikipedia](https://www.wikipedia.org/)\n [PetroWiki](https://petrowiki.spe.org/PetroWiki)\n [Oil and Gas](https://www.oil-gasportal.com/)")
 st.sidebar.header('A Friendly Reminder')
