@@ -21,7 +21,7 @@ import pickle
 from langchain import OpenAI, VectorDBQA
 from langchain.prompts.prompt import PromptTemplate
 
-st.title("""Arxiv Papers 📝 """)
+st.title("""Play with Papers 📝 """)
 #st.title("""PaperPro: Your Assistant 📝 """)
    
 
