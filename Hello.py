@@ -30,7 +30,7 @@ if choice=='Login':
     
 elif choice=='About':   
     st.markdown("Often professionals would like to know about Oil and Gas. \n\n This tool \
-                will help you improve your technical skills by advising for Oil and Gas. This tool \
+                will help you improve your technical skills by advising for Oil and Gas. This tool \n
                 is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com).\n
                 ")
 
