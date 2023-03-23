@@ -105,7 +105,7 @@ import streamlit as st
 expander = st.expander("Know about Me")
 
 expander.write("""
-     :black[I am an AI assistant for Oil and Gas Engineers based on LLMs(Large Language Models).Presently I know about  Basics of Reservoir Engineering. Consider the generated response as starting point to assist in our work.] 
+     :black[I am an AI assistant for Oil and Gas Engineers based on LLMs(Large Language Models).Presently I know about  Basics of Reservoir & Production Engineering. Consider the generated response as starting point to assist in our work.] 
      
  """)
 if "generated" not in st.session_state:
