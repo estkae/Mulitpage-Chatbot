@@ -1,14 +1,14 @@
 import streamlit as st
 st.set_page_config(
-    page_title="Hello",
-    page_icon="👋"
+    page_title="Oil Buddy",
+    page_icon="🤖"
 )
-st.title(" Oil Assistant")
-st.header(" Welcome 👋")
+st.title(" Oil Buddy 🤖: Your Assistant")
+st.write(" Version 3.0.0")
 
 st.markdown(
     """
-    We are here to make Oil and Gas Engineer life easy   
+    We are here to make Energy Professionals life easy   
 """)
 
 activities=['Login','About']
@@ -29,13 +29,14 @@ if choice=='Login':
             st.warning('Wrong Password')
     
 elif choice=='About':   
-    st.write(
-        """With the Release Streamlit Version 1.10.0 it is now possible to make a Multi-Page application 
-     eliminating need of third party plugins. In this Web application we are working to make assistant and our aim is to reduce the complexitiy of O & G Industy. 
-             """)
-expander = st.expander("Domain Knowledge of Oil & Gas ")
+    st.markdown("""Often professionals would like to know about Oil and Gas. \n\n This tool\n
+                will help you improve your technical skills by advising for Oil and Gas. This tool \n
+                is powered by [LangChain](https://langchain.com/) and [OpenAI](https://openai.com).\n
+                """)
+
+expander = st.expander("Domain Knowledge and Vision ")
 expander.write("""
-     In the fields Performance we monitor the Rates of Liquid, Oil,Gas,Water production of the wells.
-     We use the data for optimizing the fields production & hence increasing the profit for the producer.
-     We need to observe the water cut & GOR(Gas Oil Ratio) data at the platform level,well level & at the field level.
+     Domain knowledge is important in the oil and gas industry because it helps employees understand the complexities of the industry
+     and the processes involved in producing and distributing oil and gas. Our vision is to revolutionize the energy industry by creating an app
+     that leverages the power of AI and large language models(LLms) to provide innovative solutions.
  """)
