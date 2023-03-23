@@ -158,7 +158,8 @@ if query:
     with col1:
       option_compare = st.selectbox(
         'Which paper B would you want to compare with?',
-        ('None','1','2','3','4','5','6'))
+         
+         ('None','1','2','3','4','5','6'))
     
     with col2:
       
