@@ -68,19 +68,12 @@ def load_vectorstore():
     return FAISS.load_local('tot_embeddings', embeddings)
     #return FAISS.load_local('resr_manang_embeddings', embeddings)
 
-def load_vectorstore2():
-    '''load embeddings and vectorstore'''
-           
-    embeddings = CohereEmbeddings(cohere_api_key= "vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg")
-       
-    return FAISS.load_local('n_embeddings', embeddings)
-    #return FAISS.load_local('resr_manang_embeddings', embeddings)   
 
 #default embeddings
-doc1 = load_vectorstore()
-doc2 = load_vectorstore2()
-docsearch=doc1.merge_from(doc2)
-#docsearch = load_vectorstore()
+#doc1 = load_vectorstore()
+#doc2 = load_vectorstore2()
+#docsearch=doc1.merge_from(doc2)
+docsearch = load_vectorstore()
 
 
 #qa=VectorDBQA.from_chain_type(llm=Cohere(model="command-xlarge-nightly", cohere_api_key="vGCEakgncpouo9Nz0rsJ0Bq7XRvwNgTCZMKSohlg",
