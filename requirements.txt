@@ -1,6 +1,6 @@
 numpy
 pandas
-langchain
+langchain==0.0.118
 openai
 streamlit
 streamlit-chat
