@@ -92,7 +92,7 @@ qa=ChatVectorDBChain.from_llm(llm=Cohere(model="summarize-xlarge", cohere_api_ke
 # From here down is all the StreamLit UI.
 
 #st.set_page_config(page_title="Chatbot", page_icon=":shark:")
-st.header("Oil Buddy🤖 Your Assistant ",)
+st.header("Energy Buddy🤖 Your Assistant ",)
 st.sidebar.header('Sources and Citations')
 
 st.sidebar.write("Oil Buddy  has been using open source  Oil and Gasr Engineering Materials for educational purposes only.\nIts primary sources are\nReservoir and Production Engineering material prepared for GATE by courtsey of Mr. Akshay Shekhawat, as well as reputable websites such as Wikipedia, PetroWiki and  You Tube Videos related to Reservoir and Production Engineering\n")
