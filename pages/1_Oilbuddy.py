@@ -95,7 +95,7 @@ qa=ChatVectorDBChain.from_llm(llm=Cohere(model="summarize-xlarge", cohere_api_ke
 st.header("Oil Buddy🤖 Your Assistant ",)
 st.sidebar.header('Sources and Citations')
 
-st.sidebar.write("Oil Buddy  has been using open source  Oil and Gasr Engineering Materials for educational purposes only.\nIts primary sources are\nReservoir and Production Engineering material prepared for GATE by courtsey of Mr. Akshay Shekhawat, as well as reputable websites such as Wikipedia, PetroWiki and  You Tube Videos related to Reservoir and Production Engineering\n")
+st.sidebar.write("Oil Buddy  has been using open source  Oil and Gas Engineering Materials for educational purposes only.\nIts primary sources are\nPetroleum Engineering material prepared for GATE by courtsey of Mr. Akshay Shekhawat,Inhouse experts data of various disciplines as well as reputable websites such as Wikipedia, PetroWiki and  You Tube Videos related to Petroleum Engineering\n")
 st.sidebar.header('References')
 st.sidebar.write("Check Out References for more detailed info ℹ️ :\n  [Wikipedia](https://www.wikipedia.org/)\n [PetroWiki](https://petrowiki.spe.org/PetroWiki)\n [Oil and Gas](https://www.oil-gasportal.com/)")
 st.sidebar.header('A Friendly Reminder')
