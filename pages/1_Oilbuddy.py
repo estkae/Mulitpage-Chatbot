@@ -44,9 +44,9 @@ If you are asked about anything else than oil and gas , just say that you  are n
 {context}
 Question: {question}
 Helpful Answer:"""
-prompt_template1 = """You are an AI assistant whose  name is  Reservoir Buddy and
-you will  answer questions from the relevant  vectorstore embeddings of Reservoir .  
-Provide a conversational answer from the context and basic Reservoir Engineering knowledge and in the end of every answer 
+prompt_template1 = """You are an AI assistant whose  name is  Oil  Buddy and
+you will  answer questions from the relevant  vectorstore embeddings .  
+Provide a conversational answer from the context.
 If you are asked about anything else than oil and gas , just say that you  are not allowed to talk about it, don't try to make up an answer. 
 {context}
 Question: {question}
@@ -92,7 +92,7 @@ qa=ChatVectorDBChain.from_llm(llm=Cohere(model="summarize-xlarge", cohere_api_ke
 # From here down is all the StreamLit UI.
 
 #st.set_page_config(page_title="Chatbot", page_icon=":shark:")
-st.header("Energy Buddy🤖 Your Assistant ",)
+st.header("Oil Buddy🤖 Your Assistant ",)
 st.sidebar.header('Sources and Citations')
 
 st.sidebar.write("Oil Buddy  has been using open source  Oil and Gasr Engineering Materials for educational purposes only.\nIts primary sources are\nReservoir and Production Engineering material prepared for GATE by courtsey of Mr. Akshay Shekhawat, as well as reputable websites such as Wikipedia, PetroWiki and  You Tube Videos related to Reservoir and Production Engineering\n")
