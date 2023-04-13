@@ -156,7 +156,7 @@ if st.button("Submit Your Query"):
     print(len(docs))
     #if user_input:
     chat_history = []
-    print("Human:")
+    # print("Human:")
     question = "Ask questions about the most recent state of the union"
     result = qa_chain({"question": question, "chat_history": chat_history})
     chat_history.append((question, result["answer"]))
