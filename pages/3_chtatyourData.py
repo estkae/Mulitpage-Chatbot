@@ -28,7 +28,6 @@ import docsearch as ds
 with open("vectorstore.pkl", "rb") as f:
     vectorstore = pickle.load(f)
 
-#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
 def set_openai_api_key(api_key: str):
     """Set the api key and return chain.
     If no api_key, then None is returned.
