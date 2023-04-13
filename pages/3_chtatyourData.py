@@ -160,8 +160,8 @@ if st.button("Submit Your Query"):
     question = "Ask questions about the most recent state of the union"
     result = qa_chain({"question": question, "chat_history": chat_history})
     chat_history.append((question, result["answer"]))
-    print("AI:")
-    print(result["answer"])
+    # print("AI:")
+    # print(result["answer"])
 
     #output = open_ai_key({"question": user_input, "chat_history": chat_history})
     #output = qa.run(user_input)
